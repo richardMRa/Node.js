@@ -6,15 +6,16 @@ import indexRoutes from "./routes/index.js";
 
 const app = express();
 
+// get path
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-//Set ejs view engine and views folder
-app.set('views', join(__dirname, 'views'))
+// set ejs view engine
 app.set('view engine', 'ejs')
+// set views folder
+app.set('views', join(__dirname, 'views'))
 
-//Set index routes and styles
+// set index routes and styles
 app.use(indexRoutes)
-
 app.use(express.static(join(__dirname, 'public')))
 
 
